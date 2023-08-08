@@ -1,0 +1,90 @@
+/*****************************************************************************/
+TITLE: Claims                                                                                                                              
+AUTHOR NAME:    Piyush Singh
+ROLL NUMBER:    2001CS51
+-------------------------
+Declaration of Authorship
+-------------------------
+This .txt file, is a part of the assignment of CS322 at the 
+department of Computer Science and Engineering, IIT Patna.
+All files contain my name and Roll ID at the beginning of each file.
+/*****************************************************************************/
+
+The assembler and emulator have been written in C++ and are compilable with 
+
+- asm is compilable with			: asm.cpp -o asm
+- Correct format to pass arguments  : ./asm "source.asm"
+
+- emu is compilable with 			: emu.cpp -o emu
+- Correct format to pass arguments  : ./emu [option] "object.o"
+
+Both the CPP files did not show any errors or warnings when compiled with
+g++ -Wextra -Wall and g++ -pedantic
+
+The assembler and emulator has been tested against 5 test sample programs, namely, test01.asm, test02.asm, test03.asm, test04.asm. bubble.asm
+
+============================
+Program format and structure
+============================
+1. The assembler
+	- contain sensible variable names. All the variable names and definitions are self-explanatory.
+	- has three data structures to store labels, mnemonics and errors
+	- produces advanced listing file
+	- can implement and demonstrate the instruction SET
+	- uses a single routine for both passes
+	- detect all types of label and mnemonic errors
+
+2. The emulator
+	- has three data structure to store memory and mnemonics
+	- loads object file
+	- can produce memory dump after and before execution
+	- has instruction -trace.
+
+=====================
+Testing the programs:
+=====================
+The assembler detects errors wherever present and generates the output file otherwise
+
+1)
+Input: ./asm test01.asm
+Output : test1.log (No error)
+	   : test1.lst
+	   : test1.o
+
+2) 
+Input: ./asm test02.asm
+Output : test2.log (Displays Error messages)
+	   : test2.lst
+	   : test2.o
+
+3)
+Input: ./asm test03.asm
+Output:
+		: test3.lst 
+		: test3.log (without any error messages) 
+		: test3.o
+
+
+4)
+Input: ./asm test04.asm
+Output: 
+		: test4.lst 
+		: test4.log (without any error messages)
+		: test4.o
+
+5)
+Input: ./asm bubble.asm
+Output: 
+	:bubble.lst 
+	:bubble.log (without any error messages)
+	:bubble.o
+
+-The emulator
+
+1) 
+Input: ./emu -trace bubble.o
+Output: bubble_memDump.txt
+
+2) 
+Input: ./emu -trace test3.o
+Output: test3_memDump.txt

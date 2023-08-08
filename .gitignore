@@ -1,0 +1,7 @@
+.vscode
+bubble*
+*.exe
+*.log
+*.lst
+*.o
+*_memDump.txt
