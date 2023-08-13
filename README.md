@@ -20,7 +20,17 @@ An instruction involves a label followed by an optional statement. For branch in
 
 **Valid Operand:** An operand is either a label or a number, the number can be decimal, hex or octal. 
 
-
+### Example Instructions
+The following are permitted lines.
+```asm
+; a comment
+                    ; another comment
+label1:              ; a label on its own
+ldc 5                ; an instruction
+label2: ldc 5        ; a label and an instruction
+        adc 5        ; an instruction
+label3:ldc label3    ;look no space between label and mnemonic 
+```
 
 The `SIMPLE` instruction set architecture
 - 
