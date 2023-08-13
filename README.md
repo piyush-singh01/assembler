@@ -75,3 +75,7 @@ The assembler produces a listing file in the following format
 ```
 
 
+## The emulator
+- The loads the object file and emulates the program. 
+- The `-before` and `-after` options can be used to produce the memory dump of program, before and after execution respectively, as specified.
+- The `-trace` option can be used to view the trace of instructions being executed. Can be particularly helpful in debugging.
