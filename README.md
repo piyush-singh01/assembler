@@ -1,7 +1,29 @@
-As assembler for a custom RISC instruction set architecture.
+As assembler and emulator for a custom RISC instruction set architecture.
+
+
+## The Language
+The language is for a machine with four registers:
+- Two registers, A & B, arranged as an internal stack.
+- A program counter, PC
+- A stack pointer, SP
+
+These registers are 32 bits in size. Instructions have either no operands or a single operand. The
+operand is a signed 2's complement value. The encoding uses the bottom 8 bits for opcode and
+the upper 24 bits for operand.
+
+
+The language is line based (one statement per line). **Comments**: Comments begin after a `;` and anything after a `;` is ignored. Trailing and leading **Whitespaces** are ignored as well.
+
+An instruction involves a label followed by an optional statement. For branch instructions label use should calculate the branch displacement. For non-branch instructions, the label value should be used directly.
+
+**Valid Label Name:** An alphanumeric string beginning with a letter. 
+
+**Valid Operand:** An operand is either a label or a number, the number can be decimal, hex or octal. 
+
+
 
 The `SIMPLE` instruction set architecture
-
+- 
 | Mnemonic | Opcode | Operand | Formal Specification                           | Description                                                                                            |
 |----------|--------|---------|------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | data     |        | value   |                                                | Reserve a memory location,<br>initialized to the value specified                                       |
