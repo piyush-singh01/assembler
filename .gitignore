@@ -4,4 +4,3 @@ bubble*
 *.log
 *.lst
 *.o
-*_memDump.txt
