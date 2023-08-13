@@ -32,7 +32,13 @@ label2: ldc 5        ; a label and an instruction
 label3:ldc label3    ;look no space between label and mnemonic 
 ```
 
-The `SIMPLE` instruction set architecture
+### The assembler
+The produces three files:
+- A log (`*.log`) file showing the error logs.
+- The assembler listing (`*.lst`) file showing the assembly instructions along with their corresponding machine code, and what value is stored at each address.
+- The object (`.o`) file of the produces machine code.
+
+The `SIMPLE` instruction set
 - 
 | Mnemonic | Opcode | Operand | Formal Specification                           | Description                                                                                            |
 |----------|--------|---------|------------------------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -57,3 +63,15 @@ The `SIMPLE` instruction set architecture
 | br       | 17     | offset  | `PC := PC + offset`                            | Branch to the specified offset.                                                                        |
 | HALT     | 18     |         |                                                | Stops the emulator. This is not a 'real' instruction, but needed to tell your emulator when to finish. |
 | SET      |        | value   |                                                | Set the label on this line to the specified value (rather than the PC).                                |
+
+## Listing File
+The assembler produces a listing file in the following format
+```
+00000000				label:
+00000000	00000000	ldc	0
+00000001	fffffb00	ldc	fffffb00
+00000002	00000500	ldc	500
+00000003				loop:
+```
+
+
